@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mindmap BD - Turn an idea into branches</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1 id="appName">Mindmap BD</h1>
+    <p id="tagline">Turn an idea into branches</p>
+  </div>
+  <button id="langBtn" type="button">Bangla</button>
+</header>
+
+<div class="toolbar">
+  <input id="titleInput" type="text" maxlength="100" value="My Mind Map" aria-label="Map title">
+  <button id="btnAdd" type="button" class="primary">+ Add branch</button>
+  <button id="btnRename" type="button">Rename</button>
+  <button id="btnDelete" type="button" disabled>Delete</button>
+  <button id="btnLayout" type="button">Auto layout</button>
+  <button id="btnNew" type="button">New map</button>
+  <span id="stats"></span>
+</div>
+
+<p id="hint">Drag a node to move it. Double-click a label to rename it. Click a node to select it.</p>
+
+<div class="viewport">
+  <div id="canvas">
+    <svg id="lines" width="2400" height="1600"></svg>
+    <div id="nodes"></div>
+  </div>
+</div>
+
+<div id="confirmBar" class="hidden">
+  <span id="confirmText"></span>
+  <button id="confirmYes" type="button">Delete</button>
+  <button id="confirmNo" type="button">Cancel</button>
+</div>
+
+<div class="databar">
+  <button id="btnSample" type="button">Load sample</button>
+  <button id="btnExport" type="button">Export</button>
+  <button id="btnImport" type="button">Import</button>
+  <input id="fileInput" type="file" accept=".json,application/json" class="hidden">
+  <span id="eraseHint">Type DELETE to erase everything:</span>
+  <input id="eraseInput" type="text" placeholder="DELETE" aria-label="Erase confirmation">
+  <button id="btnErase" type="button">Erase all</button>
+</div>
+
+<div id="toast" role="status"></div>
+<footer><span id="footerText">Offline personal tool - your map stays in this browser only.</span></footer>
+
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
